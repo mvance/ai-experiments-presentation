@@ -11,6 +11,9 @@
   <!-- Highlight.js (GitHub light) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
 
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap">
 
@@ -57,9 +60,15 @@
           <li class="fragment">T3 typography (H1 centered, H2/body left-aligned)</li>
           <li class="fragment">Images from <a href="https://picsum.photos" target="_blank" rel="noopener">Lorem Picsum</a></li>
           <li class="fragment">Syntax highlighting with Highlight.js</li>
-          <li class="fragment">Fragments &amp; navigation buttons</li>
+          <li class="fragment">Auto-animate transitions &amp; vertical slides</li>
+          <li class="fragment">Charts, two-column layouts &amp; speaker notes</li>
+          <li class="fragment">Touch/swipe navigation support</li>
         </ul>
       </div>
+      <aside class="notes">
+        This is the agenda slide. Use arrow keys or swipe gestures to navigate.
+        Press 'S' to open speaker view and see these notes.
+      </aside>
     </section>
 
     <!-- SLIDE 3: Layout Explanation -->
@@ -134,7 +143,7 @@ Reveal.initialize({
       </div>
     </section>
 
-    <!-- SLIDE 6: Image 2 -->
+    <!-- SLIDE 9: Image 2 -->
     <section>
       <div class="ever-card">
         <div class="ever-kicker">Imagery</div>
@@ -150,9 +159,12 @@ Reveal.initialize({
           alt="Second placeholder from Lorem Picsum"
           class="ever-img">
       </div>
+      <aside class="notes">
+        This slide shows how larger images work within the card layout.
+      </aside>
     </section>
 
-    <!-- SLIDE 7: Fragments -->
+    <!-- SLIDE 10: Fragments -->
     <section>
       <div class="ever-card">
         <div class="ever-kicker">Interaction</div>
@@ -174,9 +186,12 @@ Reveal.initialize({
           </button>
         </div>
       </div>
+      <aside class="notes">
+        This slide demonstrates fragments with progressive reveal. Each list item appears on click/tap.
+      </aside>
     </section>
 
-    <!-- SLIDE 8: Closing -->
+    <!-- SLIDE 11: Closing -->
     <section>
       <div class="ever-card">
         <div class="ever-kicker">Finish</div>
@@ -186,7 +201,9 @@ Reveal.initialize({
           <li>Theme structure &amp; palette (Evernorth A3).</li>
           <li>T3 typography model (H1 centered, others left-aligned).</li>
           <li>Tall card pattern using flex + <code>disableLayout</code>.</li>
-          <li>Highlight.js integration and image embedding.</li>
+          <li>Auto-animate, vertical slides &amp; touch navigation.</li>
+          <li>Two-column layouts &amp; Chart.js integration.</li>
+          <li>Speaker notes &amp; syntax highlighting.</li>
         </ul>
 
         <div class="ever-btn-row">
@@ -195,6 +212,10 @@ Reveal.initialize({
           </button>
         </div>
       </div>
+      <aside class="notes">
+        This concludes the demo. Press 'S' to see speaker notes throughout the presentation.
+        Use arrow keys or swipe gestures to navigate.
+      </aside>
     </section>
 
   </div>
@@ -215,10 +236,71 @@ Reveal.initialize({
     center: false,
     disableLayout: true,
     slideNumber: "c/t",
-    transition: "fade"
+    transition: "slide", // Changed from "fade" to "slide" for variety
+    touch: true, // Enable touch navigation
+    loop: false,
+    rtl: false,
+    navigationMode: 'default',
+    shuffle: false,
+    fragments: true,
+    fragmentInURL: false,
+    embedded: false,
+    help: true,
+    showNotes: false,
+    autoPlayMedia: null,
+    preloadIframes: null,
+    autoAnimate: true, // Enable auto-animate
+    autoAnimateMatcher: null,
+    autoAnimateEasing: 'ease',
+    autoAnimateDuration: 1.0,
+    autoAnimateUnmatched: true
   });
 
   hljs.highlightAll();
+
+  // Initialize Chart.js chart
+  Reveal.addEventListener('ready', function() {
+    const ctx = document.getElementById('sampleChart');
+    if (ctx) {
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+          datasets: [{
+            label: 'Revenue Growth',
+            data: [12, 19, 8, 15],
+            backgroundColor: [
+              'rgba(0, 107, 111, 0.8)',
+              'rgba(0, 181, 160, 0.8)',
+              'rgba(0, 107, 111, 0.6)',
+              'rgba(0, 181, 160, 0.6)'
+            ],
+            borderColor: [
+              'rgba(0, 107, 111, 1)',
+              'rgba(0, 181, 160, 1)',
+              'rgba(0, 107, 111, 1)',
+              'rgba(0, 181, 160, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            }
+          }
+        }
+      });
+    }
+  });
 </script>
 
 </body>

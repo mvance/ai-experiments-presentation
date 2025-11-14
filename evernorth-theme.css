@@ -237,6 +237,24 @@ html, body {
   color: var(--ever-teal-header);
 }
 
+/* Two-column layout */
+.ever-two-column {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.ever-column {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .ever-two-column {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
 /* Fragments */
 .reveal .fragment.highlight-current {
   padding: 0.1em 0.2em;
