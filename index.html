@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Evernorth-Inspired Reveal.js Theme — Tall Cards (Final)</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+
+  <!-- Highlight.js (GitHub light) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap">
+
+  <style>
+    /* ================================================================
+       Evernorth-Inspired Theme — A3 Palette, Tall Cards, T3 Typography
+       ================================================================ */
+
+    :root {
+      --ever-bg-page: #ffffff;
+      --ever-bg-alt: #f4f7f8;
+
+      --ever-teal-header: #006b6f; /* primary accent */
+      --ever-teal-cta: #00b5a0;    /* bright CTA */
+      --ever-teal-border: #cfeae7; /* light border */
+
+      --ever-text-main: #1c2733;
+      --ever-text-muted: #5c6f82;
+      --ever-text-inverse: #ffffff;
+
+      --ever-border-subtle: #dde4ea;
+
+      --ever-radius-card: 18px;
+      --ever-radius-pill: 999px;
+
+      --r-main-font: "Work Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --r-main-color: var(--ever-text-main);
+      --r-background-color: var(--ever-bg-page);
+      --r-heading-color: var(--ever-text-main);
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: var(--ever-bg-page);
+    }
+
+    .reveal-viewport {
+      background: var(--ever-bg-alt);
+    }
+
+    .reveal {
+      height: 100%;
+      font-family: var(--r-main-font);
+      color: var(--ever-text-main);
+    }
+
+    .reveal .slides {
+      height: 100%;
+    }
+
+    /* Each slide fills the viewport and uses a flex layout */
+    .reveal .slides > section,
+    .reveal .slides > section > section {
+      height: 100%;
+      display: flex !important;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 3vh 3vw;
+      box-sizing: border-box;
+    }
+
+    /* Tall card that uses most of the available height */
+    .ever-card {
+      width: 100%;
+      max-width: 1100px;
+      height: 100%;
+      max-height: 90vh;
+      background: #ffffff;
+      border-radius: var(--ever-radius-card);
+      border: 1px solid var(--ever-border-subtle);
+      box-shadow: 0 4px 16px rgba(15, 32, 46, 0.12);
+      box-sizing: border-box;
+      padding: 3rem 3rem 2.8rem;
+      overflow-y: auto;
+    }
+
+    /* Typography hierarchy: T3
+       - H1 centered
+       - H2 left-aligned
+       - body / lists / code left-aligned
+    */
+
+    .ever-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72em;
+      font-weight: 500;
+      color: var(--ever-text-muted);
+      margin-bottom: 0.8rem;
+      text-align: left;
+    }
+
+    .reveal h1 {
+      font-size: 2rem;
+      margin: 0 0 0.5rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .reveal h2 {
+      font-size: 1.55rem;
+      margin: 0 0 0.5rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .reveal h3 {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.85rem;
+      color: var(--ever-text-muted);
+      margin: 0 0 0.4rem;
+      text-align: left;
+    }
+
+    .reveal p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0.2rem 0 0.6rem;
+    }
+
+    /* Explicit left alignment overrides Reveal defaults */
+    .reveal p,
+    .reveal ul,
+    .reveal ol,
+    .reveal pre,
+    .reveal code,
+    .reveal table {
+      text-align: left !important;
+    }
+
+    .reveal ul {
+      margin-left: 1.2em;
+      margin-top: 0.4rem;
+    }
+
+    .reveal ul li {
+      margin: 0.15rem 0;
+      font-size: 0.98rem;
+    }
+
+    .reveal ul li::marker {
+      color: var(--ever-teal-header);
+    }
+
+    .reveal a {
+      color: var(--ever-teal-header);
+      border-bottom: 1px solid rgba(0, 107, 111, 0.25);
+      text-decoration: none;
+      padding-bottom: 1px;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .reveal a:hover {
+      color: var(--ever-teal-cta);
+      border-color: rgba(0, 181, 160, 0.6);
+    }
+
+    /* Buttons */
+    .ever-btn-row {
+      margin-top: 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .ever-btn {
+      padding: 0.65em 1.4em;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      border-radius: var(--ever-radius-pill);
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      background: #fff;
+    }
+
+    .ever-btn--primary {
+      background: var(--ever-teal-cta);
+      color: #fff;
+      border-color: var(--ever-teal-cta);
+    }
+
+    .ever-btn--primary:hover {
+      background: #00a08d;
+    }
+
+    .ever-btn--secondary {
+      background: #fff;
+      color: var(--ever-teal-header);
+      border-color: var(--ever-teal-border);
+    }
+
+    .ever-btn--secondary:hover {
+      border-color: var(--ever-teal-header);
+    }
+
+    /* Images */
+    .ever-img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--ever-border-subtle);
+      display: block;
+      margin-top: 0.8rem;
+    }
+
+    /* Code block & syntax highlighting */
+    .reveal pre {
+      background: #f4f7f8;
+      border-radius: 12px;
+      padding: 1.1rem 1.3rem;
+      border: 1px solid var(--ever-border-subtle);
+      overflow-x: auto;
+      margin-top: 0.8rem;
+    }
+
+    .reveal code {
+      font-family: "SF Mono", "Fira Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.85rem;
+    }
+
+    /* Progress + controls */
+    .reveal .progress {
+      height: 4px;
+      background: #e3eaef;
+    }
+
+    .reveal .progress span {
+      background: var(--ever-teal-header);
+    }
+
+    .reveal .controls {
+      color: var(--ever-teal-header);
+    }
+
+    /* Fragments */
+    .reveal .fragment.highlight-current {
+      padding: 0.1em 0.2em;
+      border-radius: 4px;
+      transition: background 0.15s ease;
+    }
+
+    .reveal .fragment.highlight-current.current-fragment {
+      background: rgba(0, 181, 160, 0.14);
+    }
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+
+    <!-- SLIDE 1: Title -->
+    <section>
+      <div class="ever-card">
+        <div class="ever-kicker">Presentation Theme</div>
+        <h1>Evernorth-Inspired Reveal.js Deck</h1>
+        <h2>White, Teal, and Readable</h2>
+        <p>
+          This compact demo shows a Reveal.js theme that borrows the clean,
+          card-based look of <strong>evernorth.com</strong> while using the
+          available screen space effectively.
+        </p>
+
+        <div class="ever-btn-row">
+          <button class="ever-btn ever-btn--primary" onclick="Reveal.slide(1);">
+            View Agenda
+          </button>
+          <button class="ever-btn ever-btn--secondary" onclick="Reveal.slide(4);">
+            Jump to Code
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: Agenda -->
+    <section>
+      <div class="ever-card">
+        <div class="ever-kicker">Agenda</div>
+        <h1>What This Demo Shows</h1>
+        <h2>Key Capabilities</h2>
+        <ul>
+          <li class="fragment">Tall V2-card layout that uses vertical space</li>
+          <li class="fragment">Evernorth A3 color palette</li>
+          <li class="fragment">T3 typography (H1 centered, H2/body left-aligned)</li>
+          <li class="fragment">Images from <a href="https://picsum.photos" target="_blank" rel="noopener">Lorem Picsum</a></li>
+          <li class="fragment">Syntax highlighting with Highlight.js</li>
+          <li class="fragment">Fragments &amp; navigation buttons</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: Layout Explanation -->
+    <section>
+      <div class="ever-card">
+        <div class="ever-kicker">Layout</div>
+        <h1>Using the Available Space</h1>
+        <h2>Tall Card, Full Viewport</h2>
+        <p>
+          Instead of scaling slides down to a fixed aspect ratio, this deck
+          disables Reveal’s layout engine and uses pure CSS. Each slide:
+        </p>
+        <ul>
+          <li>Fills the viewport with a flex container.</li>
+          <li>Contains a single tall card capped at <strong>90vh</strong>.</li>
+          <li>Scrolls internally if content exceeds the visible height.</li>
+        </ul>
+        <p>
+          This lets you design slides that feel closer to Evernorth’s
+          full-height content sections while still behaving like a traditional
+          deck.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: Code + Syntax Highlighting -->
+    <section>
+      <div class="ever-card">
+        <div class="ever-kicker">Code</div>
+        <h1>Syntax Highlighting</h1>
+        <h2>Reveal.js Initialization</h2>
+        <p>
+          Highlight.js is wired up so code blocks are automatically styled.
+          Here’s the initialization snippet used for this deck:
+        </p>
+
+        <pre><code class="language-js">
+Reveal.initialize({
+  hash: true,
+  width: "100%",
+  height: "100%",
+  margin: 0,
+  minScale: 1,
+  maxScale: 1,
+  center: false,
+  disableLayout: true,
+  slideNumber: "c/t",
+  transition: "fade"
+});
+        </code></pre>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: Image 1 -->
+    <section>
+      <div class="ever-card">
+        <div class="ever-kicker">Imagery</div>
+        <h1>Tall Card with Image</h1>
+        <h2>Example from Lorem Picsum</h2>
+        <p>
+          Lorem Picsum provides convenient placeholder imagery that behaves
+          like a stand-in for real brand photography.
+        </p>
+        <img
+          src="https://picsum.photos/1200/500"
+          alt="Random placeholder from Lorem Picsum"
+          class="ever-img">
+        <p>
+          In a real deck, swap this with imagery that follows your brand’s
+          photography guidelines.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: Image 2 -->
+    <section>
+      <div class="ever-card">
+        <div class="ever-kicker">Imagery</div>
+        <h1>Another Example</h1>
+        <h2>Landscape Orientation</h2>
+        <p>
+          You can also use taller images without losing vertical space. The
+          card expands, and the image fits within it while respecting
+          the overall layout.
+        </p>
+        <img
+          src="https://picsum.photos/1200/650?random=2"
+          alt="Second placeholder from Lorem Picsum"
+          class="ever-img">
+      </div>
+    </section>
+
+    <!-- SLIDE 7: Fragments -->
+    <section>
+      <div class="ever-card">
+        <div class="ever-kicker">Interaction</div>
+        <h1>Fragments &amp; Navigation</h1>
+        <h2>Progressive Reveal</h2>
+        <p>
+          Fragments still work as expected and can be used with any content
+          inside the tall card:
+        </p>
+        <ul>
+          <li class="fragment highlight-current">Introduce a concept.</li>
+          <li class="fragment highlight-current">Add supporting detail.</li>
+          <li class="fragment highlight-current">Close with a clear takeaway.</li>
+        </ul>
+
+        <div class="ever-btn-row">
+          <button class="ever-btn ever-btn--primary" onclick="Reveal.slide(0);">
+            Back to Start
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: Closing -->
+    <section>
+      <div class="ever-card">
+        <div class="ever-kicker">Finish</div>
+        <h1>Demo Complete</h1>
+        <h2>What You Can Reuse</h2>
+        <ul>
+          <li>Theme structure &amp; palette (Evernorth A3).</li>
+          <li>T3 typography model (H1 centered, others left-aligned).</li>
+          <li>Tall card pattern using flex + <code>disableLayout</code>.</li>
+          <li>Highlight.js integration and image embedding.</li>
+        </ul>
+
+        <div class="ever-btn-row">
+          <button class="ever-btn ever-btn--secondary" onclick="Reveal.slide(1);">
+            Review Agenda
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- Reveal.js + Highlight.js -->
+<script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<script>
+  Reveal.initialize({
+    hash: true,
+    width: "100%",
+    height: "100%",
+    margin: 0,
+    minScale: 1,
+    maxScale: 1,
+    center: false,
+    disableLayout: true,
+    slideNumber: "c/t",
+    transition: "fade"
+  });
+
+  hljs.highlightAll();
+</script>
+
+</body>
+</html>
