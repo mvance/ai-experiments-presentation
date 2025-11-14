@@ -1,0 +1,249 @@
+/* ================================================================
+   Evernorth-Inspired Theme — A3 Palette, Tall Cards, T3 Typography
+   ================================================================ */
+
+:root {
+  --ever-bg-page: #ffffff;
+  --ever-bg-alt: #f4f7f8;
+
+  --ever-teal-header: #006b6f; /* primary accent */
+  --ever-teal-cta: #00b5a0;    /* bright CTA */
+  --ever-teal-border: #cfeae7; /* light border */
+
+  --ever-text-main: #1c2733;
+  --ever-text-muted: #5c6f82;
+  --ever-text-inverse: #ffffff;
+
+  --ever-border-subtle: #dde4ea;
+
+  --ever-radius-card: 18px;
+  --ever-radius-pill: 999px;
+
+  --r-main-font: "Work Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --r-main-color: var(--ever-text-main);
+  --r-background-color: var(--ever-bg-page);
+  --r-heading-color: var(--ever-text-main);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--ever-bg-page);
+}
+
+.reveal-viewport {
+  background: var(--ever-bg-alt);
+}
+
+.reveal {
+  height: 100%;
+  font-family: var(--r-main-font);
+  color: var(--ever-text-main);
+}
+
+.reveal .slides {
+  height: 100%;
+}
+
+/* Each slide fills the viewport and uses a flex layout */
+.reveal .slides > section,
+.reveal .slides > section > section {
+  height: 100%;
+  display: flex !important;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3vh 3vw;
+  box-sizing: border-box;
+}
+
+/* Tall card that uses most of the available height */
+.ever-card {
+  width: 100%;
+  max-width: 1100px;
+  height: 100%;
+  max-height: 90vh;
+  background: #ffffff;
+  border-radius: var(--ever-radius-card);
+  border: 1px solid var(--ever-border-subtle);
+  box-shadow: 0 4px 16px rgba(15, 32, 46, 0.12);
+  box-sizing: border-box;
+  padding: 4rem 4rem 3.5rem;
+  overflow-y: auto;
+}
+
+/* Typography hierarchy: T3
+   - H1 centered
+   - H2 left-aligned
+   - body / lists / code left-aligned
+*/
+
+.ever-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: var(--ever-text-muted);
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.reveal h1 {
+  font-size: 3rem;
+  margin: 0 0 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.reveal h2 {
+  font-size: 2.2rem;
+  margin: 0 0 1.2rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.reveal h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 1rem;
+  color: var(--ever-text-muted);
+  margin: 0 0 0.8rem;
+  text-align: left;
+}
+
+.reveal p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  margin: 0.5rem 0 1.2rem;
+}
+
+/* Explicit left alignment overrides Reveal defaults */
+.reveal p,
+.reveal ul,
+.reveal ol,
+.reveal pre,
+.reveal code,
+.reveal table {
+  text-align: left !important;
+}
+
+.reveal ul {
+  margin-left: 1.2em;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.reveal ul li {
+  margin: 0.8rem 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.reveal ul li::marker {
+  color: var(--ever-teal-header);
+}
+
+.reveal a {
+  color: var(--ever-teal-header);
+  border-bottom: 1px solid rgba(0, 107, 111, 0.25);
+  text-decoration: none;
+  padding-bottom: 1px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.reveal a:hover {
+  color: var(--ever-teal-cta);
+  border-color: rgba(0, 181, 160, 0.6);
+}
+
+/* Buttons */
+.ever-btn-row {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.ever-btn {
+  padding: 1em 2em;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: var(--ever-radius-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  background: #fff;
+}
+
+.ever-btn--primary {
+  background: var(--ever-teal-cta);
+  color: #fff;
+  border-color: var(--ever-teal-cta);
+}
+
+.ever-btn--primary:hover {
+  background: #00a08d;
+}
+
+.ever-btn--secondary {
+  background: #fff;
+  color: var(--ever-teal-header);
+  border-color: var(--ever-teal-border);
+}
+
+.ever-btn--secondary:hover {
+  border-color: var(--ever-teal-header);
+}
+
+/* Images */
+.ever-img {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--ever-border-subtle);
+  display: block;
+  margin-top: 0.8rem;
+}
+
+/* Code block & syntax highlighting */
+.reveal pre {
+  background: #f4f7f8;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  border: 1px solid var(--ever-border-subtle);
+  overflow-x: auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.reveal code {
+  font-family: "SF Mono", "Fira Code", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Progress + controls */
+.reveal .progress {
+  height: 4px;
+  background: #e3eaef;
+}
+
+.reveal .progress span {
+  background: var(--ever-teal-header);
+}
+
+.reveal .controls {
+  color: var(--ever-teal-header);
+}
+
+/* Fragments */
+.reveal .fragment.highlight-current {
+  padding: 0.1em 0.2em;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+.reveal .fragment.highlight-current.current-fragment {
+  background: rgba(0, 181, 160, 0.14);
+}
