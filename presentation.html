@@ -70,8 +70,10 @@
                         <h2>Small to medium JavaScript scripts in a bookmark</h2>
                         <ul>
                             <li class="fragment">Access to Web APIs</li>
-                            <li class="fragment">Include JS libraries via CDNs</li>
+                            <li class="fragment">Access to the current page's DOM</li>
+                            <li class="fragment">CDN-hosted libraries make complex functionality feasible</li>
                             <li class="fragment">Easy hosting on gist.github.com</li>
+                            <li class="fragment">Great for quick one-of browser automation or customization</li>
                         </ul>
                     </div>
                 </section>
@@ -100,12 +102,12 @@
                     <div class="ever-card">
                         <div class="ever-kicker">Project Showcase</div>
                         <h1>"Bub" (Book Hub)</h1>
-                        <h2>Book-focused navigation bookmarklet</h2>
+                        <h2>Book-focused search/navigation bookmarklet</h2>
                         <div class="fragment">
                             <ul>
-                                <li>Centralized book discovery interface</li>
-                                <li>Quick access to multiple book services</li>
-                                <li>Streamlined reading workflow</li>
+                                <li>Scrapes author, title, and other metadata</li>
+                                <li>Quickly search between different book-related sites</li>
+                                <li>Streamlined search workflow</li>
                             </ul>
                         </div>
                         <div class="fragment">
@@ -124,9 +126,8 @@
                         <h2>Text-to-speech experiments</h2>
                         <div class="fragment">
                             <ul>
-                                <li>Edge TTS integration for web content</li>
-                                <li>Audio accessibility enhancement</li>
-                                <li>Learning experience with TTS APIs</li>
+                                <li>Uses Web Speech API for text-to-speech with broad browser support</li>
+                                <li>❌ Tried Edge TTS, but it's quirky on multiple levels</li>
                             </ul>
                         </div>
                         <div class="fragment">
@@ -135,7 +136,6 @@
                                 <p>Your browser does not support the video tag.</p>
                             </video>
                         </div>
-                        <p class="fragment"><em>Note: Too glitchy for regular use, but valuable learning experience</em></p>
                     </div>
                 </section>
 
@@ -143,12 +143,13 @@
                     <div class="ever-card">
                         <div class="ever-kicker">Key Learning</div>
                         <h1>Bookmarklet Insights</h1>
-                        <h2>What these projects taught me</h2>
-                        <p class="fragment"><strong>Key Learning:</strong> Small reductions in friction can dramatically increase usage</p>
                         <ul class="fragment">
-                            <li>Bookmarklets provide immediate value with minimal setup</li>
-                            <li>CDN-hosted libraries make complex functionality accessible</li>
-                            <li>Even "failed" experiments teach valuable lessons</li>
+                            <li class="fragment">Work around bookmark size limits by wrapping remotely hosted scripts</li>
+                            <li class="fragment">Can pass state via URL arguments, URL hash, sessionStorage, or localStorage</li>
+                            <li class="fragment">Use the browser Console for debugging</li>
+                            <li class="fragment">Great for getting more familiar with the browser Console</li>
+                            <li class="fragment">Start small and add on as inspiration strikes</li>
+                            <li class="fragment">⚠️  Single line comments `//` in bookmarklets break browser parsing</li>
                         </ul>
                     </div>
                 </section>
@@ -160,12 +161,13 @@
                     <div class="ever-card">
                         <div class="ever-kicker">Phase 2</div>
                         <h1>CLI Tools</h1>
-                        <h2>Moving beyond the browser</h2>
+                        <h2>Beyond the browser</h2>
                         <ul>
-                            <li class="fragment">Web scraping with Playwright</li>
-                            <li class="fragment">Audio transcription</li>
-                            <li class="fragment">API reverse engineering</li>
+                            <li class="fragment">Basic web scraping</li>
                             <li class="fragment">Backup utilities</li>
+                            <li class="fragment">Audio transcription</li>
+                            <li class="fragment">Web scraping with Playwright</li>
+                            <li class="fragment">API client based on reverse engineered API</li>
                         </ul>
                         <div class="fragment">
                             <img src="pin_pop_xref.png" alt="Pin Pop Xref web scraping tool" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; margin: 1rem auto; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
