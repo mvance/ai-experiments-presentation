@@ -176,12 +176,12 @@
                     <div class="ever-card">
                         <div class="ever-kicker">Project Showcase</div>
                         <h1>Basic Web Scraping</h1>
-                        <h2>Pin Pop Xref tool</h2>
+                        <h2>Personalized Processing of Pinboard Popular Links</h2>
                         <div class="fragment">
                             <ul>
-                                <li>Playwright-based web scraping</li>
-                                <li>Cross-reference data extraction</li>
-                                <li>Automated data collection workflow</li>
+                                <li>Scrapes latest popular links</li>
+                                <li>Removes already seen links</li>
+                                <li>Sorts links by my usage of those tags</li>
                             </ul>
                         </div>
                         <div class="fragment">
@@ -196,11 +196,10 @@
                         <h1>Audio Transcription Tool</h1>
                         <h2>My first AI-assisted Python project</h2>
                         <div class="fragment">
-                            <p>Challenge: Transcribe audio snippets from bookmark timestamps</p>
+                            <p>Transcribe audio snippets from bookmark timestamps</p>
                             <ul>
-                                <li>Used whisper.cpp for transcription</li>
+                                <li>Uses open source whisper.cpp library for transcription</li>
                                 <li>LLM helped navigate <code>uv</code> for dependency management</li>
-                                <li>Learned cleaner Python project structure</li>
                             </ul>
                         </div>
                         <div class="fragment">
@@ -215,10 +214,11 @@
                         <h1>CLI Tools Insights</h1>
                         <h2>What worked and what didn't</h2>
                         <ul>
-                            <li class="fragment"><strong>LLMs excel at:</strong> Dependency management guidance</li>
-                            <li class="fragment"><strong>LLMs excel at:</strong> JSON parsing and data manipulation</li>
-                            <li class="fragment"><strong>Breakthrough:</strong> API calling was much easier than expected</li>
-                            <li class="fragment"><strong>Reality check:</strong> Some toolsets still have complex dependencies</li>
+                            <li class="fragment">LLMs helped with dependency management guidance</li>
+                            <li class="fragment">LLMs excel at JSON parsing and data manipulation</li>
+                            <li class="fragment">API calling was much easier than expected</li>
+                            <li class="fragment">LLMs easily generate retry logic, exponential backoff, and other best practices</li>
+                            <li class="fragment">❌ Some toolsets still have complex dependencies</li>
                         </ul>
                     </div>
                 </section>
@@ -230,7 +230,11 @@
                     <div class="ever-card">
                         <div class="ever-kicker">Phase 3</div>
                         <h1>Single Page Apps</h1>
-                        <h2>CDN-hosted dependencies to avoid complex build steps</h2>
+                        <h2>Back to the browser</h2>
+                        <ul>
+                            <li class="fragment">Spelling game</li>
+                            <li class="fragment">Search Hub</li>
+                            <li class="fragment">Custom MP3 player</li>
                     </div>
                 </section>
 
@@ -243,8 +247,8 @@
                             <h3>The Struggle</h3>
                             <ul>
                                 <li>Many failed attempts using Claude and REPLIT</li>
-                                <li>Started getting ~50% of what I wanted</li>
-                                <li>Surprisingly frustrating early attempts</li>
+                                <li>LLMs struggle with letter-level parsing (ex: "How many r's in Strawberry?")</li>
+                                <li>Kept devolving into one step forward and two steps back</li>
                             </ul>
                         </div>
                     </div>
@@ -257,14 +261,12 @@
                         <div class="fragment">
                             <h2>Strategy Changes That Worked</h2>
                             <ul>
-                                <li><strong>Spec-driven development</strong> - Better requirements</li>
+                                <li><strong>Specification- (or "spec-") driven development</strong> - Better requirements</li>
                                 <li><strong>Reference examples</strong> - Show, don't just tell</li>
                                 <li><strong>Test suite</strong> - Helped considerably</li>
                             </ul>
                         </div>
                         <div class="fragment">
-                            <p><strong>Result:</strong> Went from ~50% to ~80% success rate</p>
-                            <p><em>📺 Demo: Spelldle gameplay</em></p>
                             <div style="margin: 1rem 0;">
                                 <img src="spelldle_evaluator_test_suite.png" alt="Spelldle test suite showing evaluation results" style="width: 100%; max-width: 700px; height: auto; border-radius: 12px; margin: 1rem auto; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                             </div>
@@ -276,12 +278,13 @@
                     <div class="ever-card">
                         <div class="ever-kicker">Project Showcase</div>
                         <h1>"Sub" (Search Hub)</h1>
-                        <h2>YubNub clone with search shortcuts</h2>
+                        <h2>YubNub clone for search shortcuts</h2>
                         <div class="fragment">
                             <ul>
                                 <li>Quick navigation with search shortcuts</li>
                                 <li>Single page app with CDN dependencies</li>
-                                <li>Streamlined search workflow</li>
+                                <li>Works great as browser default search engine</li>
+                                <li>If no "command" is used, it passes search through to your preferred search engine</li>
                             </ul>
                         </div>
                         <div class="fragment">
