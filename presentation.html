@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Experiments with AI-Assisted Coding</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+    <link rel="stylesheet" href="evernorth-theme.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section>
+                <h1>My Experiments with AI-Assisted Coding</h1>
+                <p>A journey from simple bookmarklets to complex automation</p>
+                <p><small>Lessons learned, failures embraced, and practical takeaways</small></p>
+            </section>
+
+            <!-- Overview -->
+            <section>
+                <h2>The Journey</h2>
+                <ul>
+                    <li class="fragment">📚 Bookmarklets - Small scripts, big impact</li>
+                    <li class="fragment">⚙️ CLI Tools - First AI-assisted Python</li>
+                    <li class="fragment">🎮 Single Page Apps - Iterative development</li>
+                    <li class="fragment">🔧 Chrome Extensions - Brief exploration</li>
+                    <li class="fragment">🤖 Automation - Local vs. remote AI</li>
+                    <li class="fragment">❌ What didn't work</li>
+                    <li class="fragment">💡 Practical takeaways</li>
+                </ul>
+            </section>
+
+            <!-- Bookmarklets Section -->
+            <section>
+                <section>
+                    <h2>Phase 1: Bookmarklets</h2>
+                    <p>Small to medium JavaScript scripts in a bookmark</p>
+                    <ul>
+                        <li class="fragment">Access to Web APIs</li>
+                        <li class="fragment">Include JS libraries via CDNs</li>
+                        <li class="fragment">Easy hosting on gist.github.com</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Deep Dive: Book Suggestion Automator</h3>
+                    <p>Problem: Small friction was reducing my book discovery usage</p>
+                    <div class="fragment">
+                        <p>Solution: Automated bookmarklet to:</p>
+                        <ul>
+                            <li>Scrape book title and author</li>
+                            <li>Find book on GoodReads</li>
+                            <li>Reduce friction = increased usage</li>
+                        </ul>
+                    </div>
+                    <p class="fragment"><em>📺 Demo: Book suggestion automator in action</em></p>
+                </section>
+
+                <section>
+                    <h3>Other Bookmarklet Projects</h3>
+                    <ul>
+                        <li><strong>"sub" (search hub)</strong> - YubNub clone with search shortcuts</li>
+                        <li><strong>"bub" (book hub)</strong> - Book-focused navigation</li>
+                        <li><strong>"listenwise" TTS</strong> - Text-to-speech experiments</li>
+                    </ul>
+                    <p class="fragment"><strong>Key Learning:</strong> Small reductions in friction can dramatically increase usage</p>
+                </section>
+            </section>
+
+            <!-- CLI Tools Section -->
+            <section>
+                <section>
+                    <h2>Phase 2: CLI Tools</h2>
+                    <p>Moving beyond the browser</p>
+                    <ul>
+                        <li class="fragment">Web scraping with Playwright</li>
+                        <li class="fragment">Audio transcription</li>
+                        <li class="fragment">API reverse engineering</li>
+                        <li class="fragment">Backup utilities</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Deep Dive: Audio Transcription Tool</h3>
+                    <p><strong>My first AI-assisted Python project</strong></p>
+                    <div class="fragment">
+                        <p>Challenge: Transcribe audio snippets from bookmark timestamps</p>
+                        <ul>
+                            <li>Used whisper.cpp for transcription</li>
+                            <li>LLM helped navigate <code>uv</code> for dependency management</li>
+                            <li>Learned cleaner Python project structure</li>
+                        </ul>
+                    </div>
+                    <p class="fragment"><em>🖼️ Screenshot: CLI tool in action</em></p>
+                </section>
+
+                <section>
+                    <h3>CLI Tools Lessons</h3>
+                    <ul>
+                        <li class="fragment"><strong>LLMs excel at:</strong> Dependency management guidance</li>
+                        <li class="fragment"><strong>LLMs excel at:</strong> JSON parsing and data manipulation</li>
+                        <li class="fragment"><strong>Breakthrough:</strong> API calling was much easier than expected</li>
+                        <li class="fragment"><strong>Reality check:</strong> Some toolsets still have complex dependencies</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Single Page Apps Section -->
+            <section>
+                <section>
+                    <h2>Phase 3: Single Page Apps</h2>
+                    <p>CDN-hosted dependencies to avoid complex build steps</p>
+                </section>
+
+                <section>
+                    <h3>Deep Dive: "Spelldle" Game</h3>
+                    <p>Wordle + Spelling Bee hybrid</p>
+                    <div class="fragment">
+                        <h4>The Struggle</h4>
+                        <ul>
+                            <li>Many failed attempts using Claude and REPLIT</li>
+                            <li>Started getting ~50% of what I wanted</li>
+                            <li>Surprisingly frustrating early attempts</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Spelldle: The Breakthrough</h3>
+                    <div class="fragment">
+                        <h4>Strategy Changes That Worked</h4>
+                        <ul>
+                            <li><strong>Spec-driven development</strong> - Better requirements</li>
+                            <li><strong>Reference examples</strong> - Show, don't just tell</li>
+                            <li><strong>Test suite</strong> - Helped considerably</li>
+                        </ul>
+                    </div>
+                    <div class="fragment">
+                        <p><strong>Result:</strong> Went from ~50% to ~80% success rate</p>
+                        <p><em>📺 Demo: Spelldle gameplay</em></p>
+                        <p><em>🖼️ Screenshot: Test suite</em></p>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Chrome Extension Section -->
+            <section>
+                <h2>Phase 4: Chrome Extension</h2>
+                <p>Tool to manage lots of open tabs</p>
+                <ul>
+                    <li class="fragment">Find and close duplicate tabs</li>
+                    <li class="fragment">Close already bookmarked pages</li>
+                    <li class="fragment">Practical solution to a common problem</li>
+                </ul>
+                <p class="fragment"><strong>Key insight:</strong> Sometimes the simplest solutions are the most valuable</p>
+            </section>
+
+            <!-- Automation Section -->
+            <section>
+                <h2>Phase 5: Automation</h2>
+                <p>Book highlight tagging with ML complexity</p>
+                <ul>
+                    <li class="fragment">Started with complex ML toolchain</li>
+                    <li class="fragment">Experimented with local models (ollama)</li>
+                    <li class="fragment"><strong>Discovery:</strong> API calling to local and remote LLMs was <em>much</em> easier</li>
+                    <li class="fragment">Learned to balance complexity vs. utility</li>
+                </ul>
+            </section>
+
+            <!-- What Didn't Work Section -->
+            <section>
+                <section>
+                    <h2>What Didn't Work</h2>
+                    <p>Failures and semi-failures are part of the process</p>
+                </section>
+
+                <section>
+                    <h3>Failure Type 1: Technical Complexity</h3>
+                    <h4>Python ML Libraries for Book Highlight Tagging</h4>
+                    <ul>
+                        <li class="fragment">Libraries were very tricky to get running</li>
+                        <li class="fragment">Probably needed bigger pre-tagged dataset</li>
+                        <li class="fragment"><strong>Lesson:</strong> Sometimes the infrastructure overhead isn't worth it</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Failure Type 2: Wrong Tool Choice</h3>
+                    <h4>VLC Plugin Development</h4>
+                    <ul>
+                        <li class="fragment">Lots of boilerplate code required</li>
+                        <li class="fragment">Not beginner-friendly ecosystem</li>
+                        <li class="fragment"><strong>Lesson:</strong> Evaluate ecosystem friendliness early</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Failure Type 3: Scope/Strategy Issues</h3>
+                    <h4>Early Spelldle Attempts</h4>
+                    <ul>
+                        <li class="fragment">Failed at "simple" backend implementations</li>
+                        <li class="fragment">Countless attempts before stability</li>
+                        <li class="fragment"><strong>Lesson:</strong> If LLM fails 2-3 times, change strategy</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Embracing Failure</h3>
+                    <ul>
+                        <li class="fragment">Ill-fated attempts don't seem as bothersome anymore</li>
+                        <li class="fragment">LLMs can help clean up the mess/aftermath</li>
+                        <li class="fragment">Get 2nd, 3rd opinions from different models</li>
+                        <li class="fragment">Don't be afraid to put projects on hold or abandon them</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Practical Takeaways Section -->
+            <section>
+                <section>
+                    <h2>Practical Takeaways</h2>
+                    <p>Actionable advice you can use immediately</p>
+                </section>
+
+                <section>
+                    <h3>Getting Started Strategy</h3>
+                    <ul>
+                        <li class="fragment"><strong>Start small</strong> - Don't boil the ocean</li>
+                        <li class="fragment"><strong>Keep it fun</strong> - Avoid bloat and complex hosting</li>
+                        <li class="fragment"><strong>Keep a running list</strong> - Project ideas handy</li>
+                        <li class="fragment"><strong>Circle back</strong> - Apply new lessons to old projects</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>When AI Helps Most</h3>
+                    <ul>
+                        <li class="fragment"><strong>Logistical tasks:</strong> Debugging, dependency management</li>
+                        <li class="fragment"><strong>JSON parsing</strong> and data manipulation</li>
+                        <li class="fragment"><strong>Writing:</strong> Prompts, specs, documentation, commit messages</li>
+                        <li class="fragment"><strong>Reference implementations</strong> and PoCs</li>
+                        <li class="fragment"><strong>CLI one-liners</strong> with jq and other tools</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Managing Complexity & Expectations</h3>
+                    <ul>
+                        <li class="fragment"><strong>Change strategy</strong> if LLM fails 2-3 times</li>
+                        <li class="fragment"><strong>Use spec-driven development</strong> - Show examples, don't just describe</li>
+                        <li class="fragment"><strong>Get multiple opinions</strong> from different models</li>
+                        <li class="fragment"><strong>Balance:</strong> Keep it simple vs. don't reinvent the wheel</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Tool Selection Wisdom</h3>
+                    <ul>
+                        <li class="fragment"><strong>API calling</strong> is often easier than complex local setups</li>
+                        <li class="fragment"><strong>CDN-hosted dependencies</strong> avoid build complexity</li>
+                        <li class="fragment"><strong>Evaluate ecosystem friendliness</strong> early</li>
+                        <li class="fragment"><strong>Don't be afraid</strong> to try new languages, tools, APIs</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- What's Next -->
+            <section>
+                <h2>What's Next?</h2>
+                <ul>
+                    <li class="fragment"><strong>Spec-driven development tools:</strong> Spec-Kit, Kiro, Tessl, BMad Method</li>
+                    <li class="fragment"><strong>Natural language development</strong></li>
+                    <li class="fragment"><strong>Test-driven development</strong> with AI assistance</li>
+                </ul>
+                <p class="fragment"><em>The juggling metaphor: You don't juggle torches on day one</em></p>
+            </section>
+
+            <!-- Closing -->
+            <section>
+                <h2>Key Takeaway</h2>
+                <blockquote class="fragment">
+                    "AI-assisted coding isn't magic - it's an iterative learning process that gets better with practice and better strategies."
+                </blockquote>
+                <div class="fragment">
+                    <h3>Questions?</h3>
+                    <p>Let's discuss your AI coding experiments!</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade'
+        });
+    </script>
+</body>
+</html>
